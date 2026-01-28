@@ -5,22 +5,23 @@ using System.Xml.Linq;
 var fire = new Battle();
 fire.Report();
 
+                                    
 
-
-static int DiceThrow(int x, int dice)
+static string DiceThrow(int x, int dice)
 {
     int sum = 0;
     Random rand = new Random();
 
     for (int i = 0; i < x; i++)
     {
-        sum += rand.Next(1, dice+1);
-    } 
-    return sum;
+        sum += rand.Next(1, dice + 1);
+    }
+
+    return sum.ToString();
 }
 
-int d6 = DiceThrow(1, 6);
-Console.WriteLine(d6);
+string d2d6 = DiceThrow(2, 6);
+Console.WriteLine(d2d6);
 
 
 public class Fighter
@@ -132,6 +133,7 @@ public class Battle
     }
 
 }
+
 
 
 
